@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xml:base="http://efeefe.no-ip.org"  xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+ <title>efeefe - celular</title>
+ <link>http://efeefe.no-ip.org/taxonomy/term/783/0</link>
+ <description></description>
+ <language>pt-br</language>
+<item>
+ <title>Cyanogen Mod 10 - Defy Plus</title>
+ <link>http://efeefe.no-ip.org/blog/cyanogen-mod-10-defy-plus</link>
+ <description>&lt;p&gt;H&amp;aacute; alguns meses, pouco antes de sair em viagem, fiz algumas experi&amp;ecirc;ncias com sistemas alternativos em um celular Defy Plus da Motorola. Como costuma acontecer com gente curiosa, acabei passando do ponto (&amp;quot;t&amp;aacute; funcionando legal, mas e se eu tentar mais isso...?&amp;quot;). Al&amp;eacute;m disso, deixei a prud&amp;ecirc;ncia de lado e fui tentar atualizar o sistema com a bateria quase sem carga. Resultado: fiquei alguns dias com um celular morto - justamente aqueles dias em que estava com internet car&amp;iacute;ssima, inst&amp;aacute;vel e muito lenta, o que inviabilizava recuperar o sistema original. Tijolo mesmo, sem poder usar nem para liga&amp;ccedil;&amp;otilde;es, SMS ou c&amp;acirc;mera. Felizmente, depois consegui baixar uma c&amp;oacute;pia do firmware original (para quem passar por isso, recomendo buscar seu SBF por &lt;a href=&quot;http://sbf.droid-developers.org/umts_jordanplus/list.php&quot; rel=&quot;nofollow&quot;&gt;aqui&lt;/a&gt;) e recuperei o celular com o RSD Lite (que s&amp;oacute; roda em windows). Enquanto estava em tr&amp;acirc;nsito, decidi deixar com o original mesmo. Mas nas &amp;uacute;ltimas semanas, estava ficando cada vez mais insatisfeito com ele, e resolvi tentar de novo. Segue abaixo um resumo do que fiz para instalar uma vers&amp;atilde;o do &lt;a href=&quot;http://www.cyanogenmod.org/&quot; rel=&quot;nofollow&quot;&gt;Cyanogen Mod 10&lt;/a&gt; no Motorola Defy Plus.&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;
+		&lt;img align=&quot;right&quot; alt=&quot;&quot; src=&quot;/sites/efeefe.no-ip.org/files/images/2013-07-14 00_14_23.png&quot; width=&quot;200px&quot; /&gt;Primeiro passo: obter acesso root no smartphone. Existem v&amp;aacute;rias maneiras de conseguir isso. Eu achei mais tranquilo usar a &lt;a href=&quot;http://forum.cyanogenmod.org/topic/36730-motorola-droid-razr/&quot; rel=&quot;nofollow&quot;&gt;vers&amp;atilde;o para Linux&lt;/a&gt; do script &lt;a href=&quot;http://forum.xda-developers.com/showthread.php?t=1321582&quot; rel=&quot;nofollow&quot;&gt;Zerg Rush&lt;/a&gt;. &amp;Eacute; s&amp;oacute; rodar, seguir as instru&amp;ccedil;&amp;otilde;es, esperar aplicar e reiniciar.&lt;/li&gt;
+	&lt;li&gt;
+		Depois, instalei o &lt;a href=&quot;http://forum.xda-developers.com/showthread.php?t=1032212&quot; rel=&quot;nofollow&quot;&gt;2ndinit&lt;/a&gt;. O aplicativo foi retirado da play store, ent&amp;atilde;o o mais f&amp;aacute;cil &amp;eacute; baix&amp;aacute;-lo direto do &lt;a href=&quot;http://forum.xda-developers.com/showthread.php?t=1032212&quot; rel=&quot;nofollow&quot;&gt;f&amp;oacute;rum&lt;/a&gt;, copiar o .apk para o cart&amp;atilde;o de mem&amp;oacute;ria e mandar instalar por algum gerenciador de arquivos direto no celular. Depois de instalar, &amp;eacute; necess&amp;aacute;rio abrir o programa e habilit&amp;aacute;-lo. No pr&amp;oacute;ximo reboot, ele j&amp;aacute; deve aparecer - o menu pode ser acessado apertando o bot&amp;atilde;o de diminuir volume quando o led pisca (em azul) ap&amp;oacute;s ligar o aparelho.&lt;/li&gt;
+	&lt;li&gt;
+		Aproveitei para entrar no recovery e fazer um backup geral do sistema.&lt;/li&gt;
+	&lt;li&gt;
+		Baixei uma vers&amp;atilde;o do CM10 (Android Jelly Bean) empacotada por Quarx, &lt;a href=&quot;http://forum.xda-developers.com/showthread.php?t=1768702&quot; rel=&quot;nofollow&quot;&gt;aqui&lt;/a&gt;. A que funcionou para mim foi o de 16/06/13 (cm-10-20130616-NIGHTLY-mb526.zip). Baixei tamb&amp;eacute;m uma vers&amp;atilde;o reduzida dos aplicativos do google (gapps-jb-20121011-minimal_edited_18032013.zip, dispon&amp;iacute;vel &lt;a href=&quot;http://forum.xda-developers.com/showthread.php?p=30988910&quot; rel=&quot;nofollow&quot;&gt;aqui&lt;/a&gt;).&lt;/li&gt;
+	&lt;li&gt;
+		Copiei os dois arquivos .zip para o cart&amp;atilde;o SD, entrei de novo no recovery menu. Mandei apagar os dados (wipe data/factory reset), depois limpei o cache e no modo avan&amp;ccedil;ado limpei o cache dalvik. Depois voltei e mandei instalar zip do cart&amp;atilde;o SD. Comecei pelo sistema, rodando o cm10. Precisei travar algumas vezes at&amp;eacute; descobrir que o melhor jeito &amp;eacute; instalar o sistema, depois limpar de novo os dois caches, reiniciar o celular at&amp;eacute; entrar no android, e s&amp;oacute; depois voltar ao recovery menu e instalar os google apps.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Com isso, meu celular est&amp;aacute; rodando o android 4.1.2. Est&amp;aacute; macio. Um pouco mais lento do que eu gostaria, mas de toda maneira muito melhor que o sistema original. Para quem quer se aventurar, a maior parte das d&amp;uacute;vidas&amp;nbsp; de instala&amp;ccedil;&amp;atilde;o e afins podem ser sanadas nessa util&amp;iacute;ssima &lt;a href=&quot;http://forum.xda-developers.com/showthread.php?t=1795647&quot; rel=&quot;nofollow&quot;&gt;p&amp;aacute;gina de f&amp;oacute;rum&lt;/a&gt;.&lt;/p&gt;</description>
+ <category domain="http://efeefe.no-ip.org/tag/android">android</category>
+ <category domain="http://efeefe.no-ip.org/tag/celular">celular</category>
+ <category domain="http://efeefe.no-ip.org/tag/metareciclagem">metareciclagem</category>
+ <category domain="http://efeefe.no-ip.org/tag/mobile">mobile</category>
+ <pubDate>Sun, 14 Jul 2013 03:24:16 +0000</pubDate>
+ <dc:creator>felipefonseca</dc:creator>
+ <guid isPermaLink="false">12958 at http://efeefe.no-ip.org</guid>
+</item>
+<item>
+ <title>Dispositivos móveis flexíveis</title>
+ <link>http://efeefe.no-ip.org/blog/dispositivos-moveis-flexiveis</link>
+ <description>&lt;p&gt;Essa retomada da Motorola com o Android est&amp;aacute; produzindo alguns frutos realmente interessantes. O celular&amp;nbsp;&lt;a href=&quot;http://www.motorola.com/Consumers/US-EN/Consumer-Product-and-Services/Mobile-Phones/Motorola-ATRIX-US-EN&quot; rel=&quot;nofollow&quot;&gt;Atrix&lt;/a&gt; (j&amp;aacute; avaliado pelo &lt;a href=&quot;http://www.engadget.com/motorola/atrix-4g-review/&quot; rel=&quot;nofollow&quot;&gt;Engadget&lt;/a&gt;) vai um pouco na linha do que eu tinha proposto nesse &lt;a href=&quot;http://rede.metareciclagem.org/blog/13-01-11/Um-tablete-por-crianca&quot; rel=&quot;nofollow&quot;&gt;post no blog da MetaReciclagem&lt;/a&gt;&amp;nbsp;(&amp;quot;um cen&amp;aacute;rio em que os telecentros n&amp;atilde;o teriam CPUs - somente teclados, mouses e monitores. As pessoas levariam seus aparelhos com processamento pr&amp;oacute;prio e utilizariam esses perif&amp;eacute;ricos. Depois, poderiam levar os dispositivos para casa, para a escola, para o trabalho.&amp;quot;).&amp;nbsp;O Atrix &amp;eacute; um potente aparelho modular com porta HDMI e acess&amp;oacute;rios muito interessantes: um o transforma praticamente em um laptop - tela de 11&amp;quot;, mouse, teclado e bateria de longa dura&amp;ccedil;&amp;atilde;o. Outro &amp;eacute; um dock com duas portas USB e uma sa&amp;iacute;da HDMI, para ligar na TV e transform&amp;aacute;-lo em esta&amp;ccedil;&amp;atilde;o de m&amp;iacute;dia. Eles tamb&amp;eacute;m oferecem teclado e mouse sem fio, via bluetooth.&lt;/p&gt;
+&lt;p&gt;&lt;img width=&quot;480&quot; height=&quot;315&quot; alt=&quot;&quot; src=&quot;http://www.everythingandroid.org/wp-content/uploads/2011/02/motorola-atrix-laptop.jpg&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img width=&quot;480&quot; height=&quot;316&quot; alt=&quot;&quot; src=&quot;http://www.everythingandroid.org/wp-content/uploads/2011/02/motorola-atrix-laptop-dock.jpg&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Pela opini&amp;atilde;o dos editores da Engadget, os acess&amp;oacute;rios &amp;nbsp;ainda n&amp;atilde;o s&amp;atilde;o ideais - t&amp;ecirc;m problemas consider&amp;aacute;veis de constru&amp;ccedil;&amp;atilde;o, software e pre&amp;ccedil;o. Mas n&amp;atilde;o deixam de sinalizar novas aplica&amp;ccedil;&amp;otilde;es para a capacidade cada vez maior de processamento e armazenamento que est&amp;aacute; aparecendo por a&amp;iacute;. Parece um caminho que faz sentido, j&amp;aacute; que grande parte do uso que as pessoas fazem de aparelhos conectados &amp;eacute; justamente em tarefas que n&amp;atilde;o exigem um computador completo.&lt;/p&gt;
+&lt;p&gt;O que falta &amp;agrave; Motorola agora &amp;eacute; acertar a m&amp;atilde;o no desenvolvimento do Android (menos bloatware, mais liberdade) e - um assunto importante para mim - adequar-se melhor no que toca &amp;agrave; sustentabilidade e ao gerenciamento res&amp;iacute;duos (a empresa caiu para sexto lugar na &amp;uacute;ltima edi&amp;ccedil;&amp;atilde;o do&amp;nbsp;&lt;a href=&quot;http://www.greenpeace.org/international/en/campaigns/toxics/electronics/Guide-to-Greener-Electronics/&quot; rel=&quot;nofollow&quot;&gt;guia do Greenpeace&lt;/a&gt;).&lt;/p&gt;</description>
+ <category domain="http://efeefe.no-ip.org/tag/celular">celular</category>
+ <category domain="http://efeefe.no-ip.org/tag/gid">gid</category>
+ <category domain="http://efeefe.no-ip.org/tag/mobile">mobile</category>
+ <pubDate>Sun, 13 Mar 2011 18:25:03 +0000</pubDate>
+ <dc:creator>felipefonseca</dc:creator>
+ <guid isPermaLink="false">10330 at http://efeefe.no-ip.org</guid>
+</item>
+</channel>
+</rss>

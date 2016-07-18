@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xml:base="http://efeefe.no-ip.org"  xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+ <title>efeefe - mysql</title>
+ <link>http://efeefe.no-ip.org/taxonomy/term/785/0</link>
+ <description></description>
+ <language>pt-br</language>
+<item>
+ <title>UID</title>
+ <link>http://efeefe.no-ip.org/agregando/uid</link>
+ <description>&lt;div class=fonte_feed&gt;
+&lt;em&gt;Este post foi agregado por RSS. Link original:&lt;br&gt;
+&lt;a href=&gt;&lt;/a&gt;&lt;/em&gt;&lt;/div&gt;
+---
+&lt;p&gt;Há alguns meses já estávamos com problemas em alguns posts do &lt;a href=&quot;http://rede.metareciclagem.org&quot; rel=&quot;nofollow&quot; rel=&quot;nofollow&quot;&gt;site da &lt;a href=&quot;/freelinking/MetaReciclagem&quot; class=&quot;freelinking&quot; rel=&quot;nofollow&quot;&gt;MetaReciclagem&lt;/a&gt;&lt;/a&gt;: apareciam de repente sem estar associados a nenhumx autorx, e isso atrapalhava o acesso e a edição do conteúdo. Não consegui descobrir a causa do problema (que afeta, em verdade, uma proporção ínfima do site - duas páginas em um universo de mais de 2000), mas hoje aprendi a consertar, com ajuda do &lt;a href=&quot;/pessoa/wundo&quot; rel=&quot;nofollow&quot; rel=&quot;nofollow&quot;&gt;Wundo&lt;/a&gt;. Lá vai:&lt;/p&gt;
+&lt;p&gt;Entrar no mysql&lt;/p&gt;
+&lt;p class=&quot;rteindent1&quot;&gt;#mysql -u usuario -p&lt;/p&gt;
+&lt;p&gt;Selecionar o banco de dados&lt;/p&gt;
+&lt;p class=&quot;rteindent1&quot;&gt;mysql&gt; use bancodedados;&lt;/p&gt;
+&lt;p&gt;Verificar se o problema é mesmo o id de usuárix&lt;/p&gt;
+&lt;p class=&quot;rteindent1&quot;&gt;mysql&gt; SELECT uid from node where nid=XXX;&lt;/p&gt;
+&lt;p&gt;(onde XXX deve ser substituído pelo ID do node em questão)&lt;/p&gt;
+&lt;p&gt;O resultado aqui foi:&lt;/p&gt;
+&lt;p&gt;
+&lt;/p&gt;&lt;p class=&quot;rteindent1&quot;&gt;+-----+&lt;/p&gt;
+&lt;p class=&quot;rteindent1&quot;&gt;| uid |&lt;/p&gt;
+&lt;p class=&quot;rteindent1&quot;&gt;+-----+&lt;/p&gt;
+&lt;p class=&quot;rteindent1&quot;&gt;|   0 | &lt;/p&gt;
+&lt;p class=&quot;rteindent1&quot;&gt;+-----+&lt;/p&gt;
+Ou seja, o node está associado ao usuário 0, que não existe. Então vou associá-lo ao usuário 1 (que é o superusuário do drupal) e posteriormente posso atribuir a quem eu quiser através da interface web:
+ 
+mysql&gt; UPDATE node SET uid = 1 WHERE nid = XXX;
+ 
+E pronto, os nodes voltaram a ser associados a usuários do site: &lt;a href=&quot;/freelinking/EventosEtc&quot; class=&quot;freelinking&quot; rel=&quot;nofollow&quot;&gt;EventosEtc&lt;/a&gt; e &lt;a href=&quot;/wiki/APH-no-Recife&quot; rel=&quot;nofollow&quot; rel=&quot;nofollow&quot;&gt;APH-no-Recife&lt;/a&gt;.
+&lt;a href=&quot;/conectaz/Infra-L%C3%B3gica&quot; rel=&quot;nofollow&quot;&gt;Infra Lógica&lt;/a&gt;</description>
+ <category domain="http://efeefe.no-ip.org/tag/cli">cli</category>
+ <category domain="http://efeefe.no-ip.org/tag/drupal">drupal</category>
+ <category domain="http://efeefe.no-ip.org/tag/infral%C3%B3gica">infralógica</category>
+ <category domain="http://efeefe.no-ip.org/tag/linha-de-comando">linha de comando</category>
+ <category domain="http://efeefe.no-ip.org/tag/metareciclagem">metareciclagem</category>
+ <category domain="http://efeefe.no-ip.org/tag/mysql">mysql</category>
+ <pubDate>Thu, 17 Mar 2011 20:49:12 +0000</pubDate>
+ <dc:creator>felipefonseca</dc:creator>
+ <guid isPermaLink="false">10341 at http://efeefe.no-ip.org</guid>
+</item>
+</channel>
+</rss>

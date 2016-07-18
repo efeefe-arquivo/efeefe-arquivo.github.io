@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xml:base="http://efeefe.no-ip.org"  xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+ <title>efeefe - linha de comando</title>
+ <link>http://efeefe.no-ip.org/taxonomy/term/64/0</link>
+ <description></description>
+ <language>pt-br</language>
+<item>
+ <title>UID</title>
+ <link>http://efeefe.no-ip.org/agregando/uid</link>
+ <description>&lt;div class=fonte_feed&gt;
+&lt;em&gt;Este post foi agregado por RSS. Link original:&lt;br&gt;
+&lt;a href=&gt;&lt;/a&gt;&lt;/em&gt;&lt;/div&gt;
+---
+&lt;p&gt;Há alguns meses já estávamos com problemas em alguns posts do &lt;a href=&quot;http://rede.metareciclagem.org&quot; rel=&quot;nofollow&quot; rel=&quot;nofollow&quot;&gt;site da &lt;a href=&quot;/freelinking/MetaReciclagem&quot; class=&quot;freelinking&quot; rel=&quot;nofollow&quot;&gt;MetaReciclagem&lt;/a&gt;&lt;/a&gt;: apareciam de repente sem estar associados a nenhumx autorx, e isso atrapalhava o acesso e a edição do conteúdo. Não consegui descobrir a causa do problema (que afeta, em verdade, uma proporção ínfima do site - duas páginas em um universo de mais de 2000), mas hoje aprendi a consertar, com ajuda do &lt;a href=&quot;/pessoa/wundo&quot; rel=&quot;nofollow&quot; rel=&quot;nofollow&quot;&gt;Wundo&lt;/a&gt;. Lá vai:&lt;/p&gt;
+&lt;p&gt;Entrar no mysql&lt;/p&gt;
+&lt;p class=&quot;rteindent1&quot;&gt;#mysql -u usuario -p&lt;/p&gt;
+&lt;p&gt;Selecionar o banco de dados&lt;/p&gt;
+&lt;p class=&quot;rteindent1&quot;&gt;mysql&gt; use bancodedados;&lt;/p&gt;
+&lt;p&gt;Verificar se o problema é mesmo o id de usuárix&lt;/p&gt;
+&lt;p class=&quot;rteindent1&quot;&gt;mysql&gt; SELECT uid from node where nid=XXX;&lt;/p&gt;
+&lt;p&gt;(onde XXX deve ser substituído pelo ID do node em questão)&lt;/p&gt;
+&lt;p&gt;O resultado aqui foi:&lt;/p&gt;
+&lt;p&gt;
+&lt;/p&gt;&lt;p class=&quot;rteindent1&quot;&gt;+-----+&lt;/p&gt;
+&lt;p class=&quot;rteindent1&quot;&gt;| uid |&lt;/p&gt;
+&lt;p class=&quot;rteindent1&quot;&gt;+-----+&lt;/p&gt;
+&lt;p class=&quot;rteindent1&quot;&gt;|   0 | &lt;/p&gt;
+&lt;p class=&quot;rteindent1&quot;&gt;+-----+&lt;/p&gt;
+Ou seja, o node está associado ao usuário 0, que não existe. Então vou associá-lo ao usuário 1 (que é o superusuário do drupal) e posteriormente posso atribuir a quem eu quiser através da interface web:
+ 
+mysql&gt; UPDATE node SET uid = 1 WHERE nid = XXX;
+ 
+E pronto, os nodes voltaram a ser associados a usuários do site: &lt;a href=&quot;/freelinking/EventosEtc&quot; class=&quot;freelinking&quot; rel=&quot;nofollow&quot;&gt;EventosEtc&lt;/a&gt; e &lt;a href=&quot;/wiki/APH-no-Recife&quot; rel=&quot;nofollow&quot; rel=&quot;nofollow&quot;&gt;APH-no-Recife&lt;/a&gt;.
+&lt;a href=&quot;/conectaz/Infra-L%C3%B3gica&quot; rel=&quot;nofollow&quot;&gt;Infra Lógica&lt;/a&gt;</description>
+ <category domain="http://efeefe.no-ip.org/tag/cli">cli</category>
+ <category domain="http://efeefe.no-ip.org/tag/drupal">drupal</category>
+ <category domain="http://efeefe.no-ip.org/tag/infral%C3%B3gica">infralógica</category>
+ <category domain="http://efeefe.no-ip.org/tag/linha-de-comando">linha de comando</category>
+ <category domain="http://efeefe.no-ip.org/tag/metareciclagem">metareciclagem</category>
+ <category domain="http://efeefe.no-ip.org/tag/mysql">mysql</category>
+ <pubDate>Thu, 17 Mar 2011 20:49:12 +0000</pubDate>
+ <dc:creator>felipefonseca</dc:creator>
+ <guid isPermaLink="false">10341 at http://efeefe.no-ip.org</guid>
+</item>
+<item>
+ <title>God</title>
+ <link>http://efeefe.no-ip.org/agregando/god</link>
+ <description>&lt;div class=fonte_feed&gt;
+&lt;em&gt;Este post foi agregado por RSS. Link original:&lt;br&gt;
+&lt;a href=&gt;&lt;/a&gt;&lt;/em&gt;&lt;/div&gt;
+---
+A criação do mundo em linha de comando:
+&lt;a href=&quot;http://celobox.googlepages.com/god.html&quot; title=&quot;http://celobox.googlepages.com/god.html&quot; rel=&quot;nofollow&quot;&gt;http://celobox.googlepages.com/god.html&lt;/a&gt;
+       &lt;img alt=&quot;&quot; border=&quot;0&quot; src=&quot;http://stats.wordpress.com/b.gif?host=tecnomagxs.wordpress.com&amp;amp;blog=4364306&amp;amp;post=128&amp;amp;subd=tecnomagxs&amp;amp;ref=&amp;amp;feed=1&quot; /&gt;</description>
+ <category domain="http://efeefe.no-ip.org/tag/english">english</category>
+ <category domain="http://efeefe.no-ip.org/tag/god">god</category>
+ <category domain="http://efeefe.no-ip.org/tag/linha-de-comando">linha de comando</category>
+ <category domain="http://efeefe.no-ip.org/tag/shell">shell</category>
+ <category domain="http://efeefe.no-ip.org/tag/tecnomagia">tecnomagia</category>
+ <category domain="http://efeefe.no-ip.org/tag/uncategorized">Uncategorized</category>
+ <pubDate>Thu, 23 Apr 2009 02:24:20 +0000</pubDate>
+ <dc:creator>felipefonseca</dc:creator>
+ <guid isPermaLink="false">4180 at http://efeefe.no-ip.org</guid>
+</item>
+<item>
+ <title>Instalando o drupal em pouco mais de 6 minutos</title>
+ <link>http://efeefe.no-ip.org/blog/instalando-o-drupal-em-pouco-mais-de-6-minutos</link>
+ <description>&lt;p&gt;Tava brincando hoje com ferramentas de captura do desktop, e pra testar acabei fazendo um v&amp;iacute;deo de como subir um site com drupal em poucos minutos, usando shell e deixando tudo bem organizadinho pra eventuais updates. T&amp;aacute; no youtube, ainda sem &amp;aacute;udio, mas funcionando. Se eu quisesse, acho que conseguia fechar em cinco minutos, mas fiquei meio lerdo em uns momentos.&lt;/p&gt;
+&lt;object height=&quot;344&quot; width=&quot;425&quot;&gt;
+&lt;param name=&quot;movie&quot; value=&quot;http://www.youtube.com/v/oRSjkbQ4QHQ&amp;amp;hl=pt-br&amp;amp;fs=1&quot; /&gt;
+&lt;param name=&quot;allowFullScreen&quot; value=&quot;true&quot; /&gt;
+&lt;param name=&quot;allowscriptaccess&quot; value=&quot;always&quot; /&gt;&lt;embed height=&quot;344&quot; width=&quot;425&quot; src=&quot;http://www.youtube.com/v/oRSjkbQ4QHQ&amp;amp;hl=pt-br&amp;amp;fs=1&quot; type=&quot;application/x-shockwave-flash&quot; allowscriptaccess=&quot;always&quot; allowfullscreen=&quot;true&quot;&gt;&lt;/embed&gt;&lt;/object&gt;</description>
+ <category domain="http://efeefe.no-ip.org/tag/drupal">drupal</category>
+ <category domain="http://efeefe.no-ip.org/tag/linha-de-comando">linha de comando</category>
+ <category domain="http://efeefe.no-ip.org/tag/linux">linux</category>
+ <category domain="http://efeefe.no-ip.org/tag/metareciclagem">metareciclagem</category>
+ <category domain="http://efeefe.no-ip.org/tag/shell">shell</category>
+ <category domain="http://efeefe.no-ip.org/tag/xemele">xemele</category>
+ <pubDate>Wed, 22 Apr 2009 22:33:18 +0000</pubDate>
+ <dc:creator>felipefonseca</dc:creator>
+ <guid isPermaLink="false">4179 at http://efeefe.no-ip.org</guid>
+</item>
+<item>
+ <title>Drushin</title>
+ <link>http://efeefe.no-ip.org/blog/drushin</link>
+ <description>Usando o mutirao e a rede.metareciclagem.org para começar a testar o &lt;a href=&quot;http://drupal.org/project/drush&quot; rel=&quot;nofollow&quot;&gt;drush&lt;/a&gt;, que pode nos ajudar bastante na administração de sites em drupal.&lt;br /&gt;&lt;br /&gt;A instalação rolou normal: descompactar os arquivos dentro de modules e habilitar na web. Escolhi wget em vez de CVS ou SVN. Aí fui pra linha de comando. Além das &lt;a href=&quot;http://cvs.drupal.org/viewvc.py/drupal/contributions/modules/drush/README.txt?view=markup&quot; rel=&quot;nofollow&quot;&gt;dicas&lt;/a&gt; de instalação, resolvi fazer mais de um link simbólico, já que vou usar o drush no mutirao e na rede metareciclagem. Assim, em vez de ln -s (...) /usr/bin/drush, fiz ln -s (...) /usr/bin/drush_mutirao e ln -s (...) /usr/bin/drush_rede. &lt;br /&gt;&lt;br /&gt;Fui pro diretório de instalação do mutirao e rodei drush_mutirao. Ele reclamou que o php estava tentando alocar 30Mb de RAM. Achei estranho, porque já tinha mudado o php.ini pra alocar 64Mb. Demorei um pouco a me ligar que eu não tava rodando o php dentro do browser, mas na linha de comando. Precisava então mudara o php.ini dentro de /etc/php5/cli e não /etc/php5/apache2. Editei o arquivo e rodei:&lt;br /&gt;&lt;br /&gt;&lt;em&gt;drush&lt;/em&gt;&lt;br /&gt;&lt;br /&gt;me deu uma lista de opções&lt;br /&gt;&lt;br /&gt;&lt;em&gt;drush pm refresh&lt;/em&gt;&lt;br /&gt;&lt;br /&gt;e depois &lt;br /&gt;&lt;br /&gt;&lt;em&gt;drush pm update -v&lt;/em&gt;&lt;br /&gt;&lt;br /&gt;ele avisou que não pode (ainda) atualizar o core do drupal, mas baixou e substituiu três módulos que estavam desatualizados. depois foi só rodar o update.php e pronto, tudo funcionando.&lt;br /&gt;&lt;br /&gt;ponto pro drush.</description>
+ <category domain="http://efeefe.no-ip.org/tag/drupal">drupal</category>
+ <category domain="http://efeefe.no-ip.org/tag/linha-de-comando">linha de comando</category>
+ <category domain="http://efeefe.no-ip.org/tag/xemele">xemele</category>
+ <pubDate>Sat, 16 Aug 2008 15:08:54 +0000</pubDate>
+ <dc:creator>felipefonseca</dc:creator>
+ <guid isPermaLink="false">3226 at http://efeefe.no-ip.org</guid>
+</item>
+<item>
+ <title>Linha de comando, donna em sampa e trocação de idéia</title>
+ <link>http://efeefe.no-ip.org/blog/linha-de-comando-donna-em-sampa-e-troca%C3%A7%C3%A3o-de-id%C3%A9ia</link>
+ <description>&lt;p&gt;
+Eu tenho uma coleção de bookmarks aguardando leitura aqui no meu
+firefox. Hoje resolvi passar alguns (de vez em quando eu começo a ler
+alguns deles) e achei um artigo bem interessante:
+&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&quot;http://www.networkcultures.org/weblog/archives/2007/04/linux_for_theat.html&quot; title=&quot;Network Cultures&quot; rel=&quot;nofollow&quot;&gt;&lt;strong&gt;Linux for Theatre Makers: Embodiment and *nix modus operandi&lt;/strong&gt;&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;
+Alguns trechos que chamaram minha atenção:
+&lt;/p&gt;
+&lt;blockquote&gt;
+	&lt;p&gt;
+	My central thread in this text is the Linux computer operating
+	system(OS) and more specifically the use of the command-line
+	interface within this OS and its relationship to embodiment.
+	&lt;/p&gt;
+	&lt;p&gt;
+	(...)
+	&lt;/p&gt;
+	&lt;p&gt;
+	When I first discovered the power to delete the file in my OpenBSD
+	terminal that the OSX finder could not trash I felt was no longer a
+	prisoner inside my machine, only possessing knowledge of a GUI, I was
+	formerly stuck in a holding pattern. Using *nix you keep moving all the
+	time, discovering always new executable codes sensitive to commands.
+	&lt;/p&gt;
+	&lt;p&gt;
+	In the shell I find a marvelous mess of constellations, nebulae,
+	interstellar gaps, awesome gullies, that provokes in me an
+	indescribable sense of vertigo, as if I am hanging from earth upside
+	down on the brink of infinite space, with terrestrial gravity still
+	holding me by the heels but about to release me any moment. An example
+	is /dev/null - a special *nix file where you pipe your unwanted data
+	flow through this output. When I first experienced viewing data
+	disappearing into this file, I immediately had an epiphany about the
+	black hole and how the theory of the event horizon might function in an
+	every day context.
+	&lt;/p&gt;
+	&lt;p&gt;
+	(...)
+	&lt;/p&gt;
+	&lt;p&gt;
+	It is easy to assume that source code is equivalent to bones and oper-
+	able binaries to flesh; or the kernel as fundament, and file structure
+	as slough. I would rather argue for a system of cubist plateaus of
+	intersecting information regimes, with vectors / commands operating
+	among them. In this sense it is information that is immanent within the
+	operating system, not any particular plateau-architecture.&amp;quot; 
+	&lt;/p&gt;
+	&lt;p&gt;
+	(...) according to Nielsen &amp;amp; Gentner if people opt for the GUI it
+	ultimately limits human communication and even our ability to imagine
+	the intangible, 
+	&lt;/p&gt;
+	&lt;p&gt;
+	&amp;quot;The see and point principal states that users interact with the
+	computer by pointing at the objects they can see on the screen. It&#039;s as
+	if we have thrown away a million years of evolution, lost our facility
+	with expressive language, and have been reduced to point at objects in
+	the immediate environment. Mouse buttons and modifier keys give us a
+	vocabulary equivalent to a few different grunts. We have lost all the
+	power of language, and can no longer talk about objects that are not
+	immediately visible...&amp;quot;
+	&lt;/p&gt;
+	&lt;p&gt;
+	(...)
+	&lt;/p&gt;
+	&lt;p&gt;
+	After about three years of listening to the multiple and vexed opinions
+	about what Linux distribution to actually use, in general most people
+	tried to protect me from installing Gentoo Linux, which arguably,
+	brings one closer to understanding the OS intimately, than most other
+	distributions (that is, apart from Linux-from-Scratch). Eventually
+	the installation, even with experienced support people guiding me, felt
+	similar to that of a rite-of-passage. 
+	&lt;/p&gt;
+	&lt;p&gt;
+	&lt;em&gt;[olha os mitos aí]&lt;/em&gt;
+	&lt;/p&gt;
+	&lt;p&gt;
+	(...)
+	&lt;/p&gt;
+	&lt;p&gt;
+	In the wake of increased computational usage, it is important moment
+	for people to want to continue to actively reinvent language. Yet even
+	in spite of their severity, computer languages have caused a tremendous
+	creativity because there was, so far, no power to discipline them, as
+	Sondheim has noticed &#039;for some of us, linux _has_ changed the
+	language&#039;. 
+	&lt;/p&gt;
+	&lt;p&gt;
+	(...)
+	&lt;/p&gt;
+	&lt;p&gt;
+	As Harwood comments &#039;It seems software exists in some form of invisible
+	shadow world of procedure...Software is establishing models by which
+	things are done yet, like believing the objectivity of maps, we forget
+	that software is derived from certain cultural, historical and economic
+	trajectories.&#039; 
+	&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;
+E aí fui ver quem escreveu, é uma das meninas do &lt;a href=&quot;http://eclectictechcarnival.org&quot; title=&quot;/etc&quot; rel=&quot;nofollow&quot;&gt;/etc&lt;/a&gt;, o que me lembra de contar que ontem fui à &lt;a href=&quot;http://estudiolivre.org/sampalab&quot; title=&quot;Sampalab&quot; rel=&quot;nofollow&quot;&gt;casinha&lt;/a&gt; trocar a idéia com a Donna, menina dos &lt;a href=&quot;http://www.genderchangers.org/&quot; title=&quot;Genderchangers&quot; rel=&quot;nofollow&quot;&gt;Gender Changers&lt;/a&gt; que tá fazendo uma &lt;a href=&quot;http://pub.descentro.org/residencia_genderchangers&quot; title=&quot;residência no descentro&quot; rel=&quot;nofollow&quot;&gt;residência descêntrica&lt;/a&gt;,
+também envolvida com o /etc. Cheguei no meio da tarde, com sono e fome,
+a gente foi almoçar na padaria ali na frente da casinha. &lt;a href=&quot;http://estudiolivre.org/el-user.php?view_user=salsaman&quot; title=&quot;Salsaman no EL&quot; rel=&quot;nofollow&quot;&gt;Salsaman&lt;/a&gt;, desenvolvedor do &lt;a href=&quot;http://lives.sourceforge.net/&quot; title=&quot;Linux Video Editing System&quot; rel=&quot;nofollow&quot;&gt;Lives&lt;/a&gt; que tá hospedado na casinha desde que veio pro &lt;a href=&quot;http://fisl.softwarelivre.org/8.0/www/&quot; title=&quot;Fisl 8.0&quot; rel=&quot;nofollow&quot;&gt;Fisl&lt;/a&gt;, tava junto, além de &lt;a href=&quot;/marialu&quot; title=&quot;MariaLu&quot; rel=&quot;nofollow&quot;&gt;Maria_Lu&lt;/a&gt;
+e Marcita. Voltamos pra casinha, e o movimento tava lento. A galera foi
+chegando aos poucos, e com algum atraso rolou uma apresentação da
+Donna, contou de &lt;a href=&quot;http://scii.nl&quot; title=&quot;Ascii&quot; rel=&quot;nofollow&quot;&gt;ascii&lt;/a&gt;,
+genderchangers, /etc, de participação em eventos, das oficinas de
+gênero e tecnologia. Não ouvi toda a apresentação porque ao mesmo tempo
+eu tava lá atrás extraindo o áudio das mini-DVs do &lt;a href=&quot;http://pub.descentro.org/dialogos_na_casinha_novaes_11_05_2007&quot; title=&quot;Diálogo com Novaes no DesCentro&quot; rel=&quot;nofollow&quot;&gt;diálogo na casinha com o novaes&lt;/a&gt; (e rolou!). Depois rolou sessão do &lt;a href=&quot;http://feminismspeakup.blogspot.com/&quot; title=&quot;Feminism Speak Up&quot; rel=&quot;nofollow&quot;&gt;Feminism Speak Up!&lt;/a&gt;,
+que eu ainda não tinha assistido. Belo vídeo, parabéns à Valentina e
+sua galera. Aí o pessoal debateu mais um pouco e foi saindo. Fiquei
+ainda uma meia hora conversando com a Donna, mostrei umas fotinhos de &lt;a href=&quot;http://metareciclagem.org&quot; title=&quot;...&quot; rel=&quot;nofollow&quot;&gt;MetaReciclagem&lt;/a&gt;,
+trocamos idéia sobre um monte de assuntos interessantes em tempo
+reduzidíssimo. Um dia eu encontro com ela em Amsterdam pra conversar
+mais ;)
+&lt;/p&gt;
+&lt;p&gt;
+&amp;nbsp;
+&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&quot;http://estudiolivre.org/el-gallery_view.php?arquivoId=1097&quot; title=&quot;Linha de comando no EL&quot; rel=&quot;nofollow&quot;&gt;Linha de comando é o maior maior barato&lt;/a&gt; 
+&lt;/p&gt;</description>
+ <category domain="http://efeefe.no-ip.org/tag/bricolabs">bricolabs</category>
+ <category domain="http://efeefe.no-ip.org/tag/descentro">descentro</category>
+ <category domain="http://efeefe.no-ip.org/tag/linha-de-comando">linha de comando</category>
+ <category domain="http://efeefe.no-ip.org/tag/metareciclagem">metareciclagem</category>
+ <category domain="http://efeefe.no-ip.org/tag/tecnomagia">tecnomagia</category>
+ <pubDate>Mon, 04 Jun 2007 22:57:52 +0000</pubDate>
+ <dc:creator>felipefonseca</dc:creator>
+ <guid isPermaLink="false">299 at http://efeefe.no-ip.org</guid>
+</item>
+<item>
+ <title>O poder das palavras</title>
+ <link>http://efeefe.no-ip.org/blog/o-poder-das-palavras</link>
+ <description>&lt;p&gt;
+Pra além de toda exploração simbólica-poética, palavras &lt;a href=&quot;http://pt.wikipedia.org/wiki/Cabala&quot; title=&quot;Cabala, na wikipedia&quot; rel=&quot;nofollow&quot;&gt;têm poder&lt;/a&gt;.
+&lt;/p&gt;
+&lt;blockquote&gt;
+	&lt;p&gt;
+	Grande parte das formas de Cabala ensinam que cada letra, palavra,
+	número, e acento da Escritura contêm um sentido escondido e ensina os
+	métodos de interpretação para verificar esses significados ocultos.
+	&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;
+Palavras têm poder
+&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&quot;http://www.midiatatica.org/ip/index.php?id=2,58,0,0,1,0&quot; title=&quot;Oficina de Tela preta no IP&quot; rel=&quot;nofollow&quot;&gt;
+root@nomade:~# rm -rf /&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;
+&lt;img src=&quot;http://www.midiatatica.org/ip/content/images/8fdf0c4110efc624705c4df058e86b56.png&quot; alt=&quot;Tela Preta&quot; width=&quot;400&quot; height=&quot;226&quot; /&gt;
+&lt;/p&gt;
+&lt;p&gt;
+&amp;nbsp;
+&lt;/p&gt;
+&lt;p&gt;
+Pra além do mkdir, se pans fazer um mkmundo. mkgente.
+&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&quot;http://pt.wikipedia.org/wiki/Golem&quot; title=&quot;Golem, na Wikipedia&quot; rel=&quot;nofollow&quot;&gt;root@nomade:~# mkgolem&lt;/a&gt;
+&lt;/p&gt;
+&lt;blockquote&gt;
+	&lt;p&gt;
+	A primeira publicação da história do golem apareceu em 1847 em uma coleção de contos judaicos intitulada &lt;em&gt;Galerie der Sippurim&lt;/em&gt;,
+	publicada por Wolf Pascheles, de Praga. Cerca de 60 anos mais tarde, um
+	conto de ficção foi publicado por Yudl Rosenberg (1909). De acordo com
+	a lenda, o golem teria sido feito com a argila do rio &lt;a href=&quot;http://pt.wikipedia.org/wiki/Moldava&quot; title=&quot;Moldava&quot; rel=&quot;nofollow&quot;&gt;Moldava&lt;/a&gt;
+	que banha Praga. Seguindo rituais específicos, o rabino construiu o
+	golem e fez com que ele ganhasse vida recitando um encanto especial em
+	hebreu e escrevendo na sua testa a palavra &lt;em&gt;emet&lt;/em&gt;. O golem
+	deveria obedecer ao rabino, ajudando e protegendo o gueto judaico.
+	Durante o dia, o rabino escondia o golem no sótão da Antiga-Nova
+	Sinagoga. Porém, o golem cresceu e se tornou violento e começou a matar
+	pessoas espalhando o medo. Foi então prometido ao rabino Loew que a
+	violência contra os judeus pararia se o golem fosse destruído. O rabino
+	concordou e destruiu o golem apagando a primeira letra da palavra &lt;em&gt;Emet&lt;/em&gt;
+	&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;
+ E eu tô indo em 12 dias viver em &lt;a href=&quot;http://pt.wikipedia.org/wiki/Dresden&quot; title=&quot;Dresden, na Wikipedia&quot; rel=&quot;nofollow&quot;&gt;Dresden&lt;/a&gt;, que além de produzir &lt;a href=&quot;http://www.silicon-saxony.net/&quot; title=&quot;Silicon Saxony&quot; rel=&quot;nofollow&quot;&gt;aparelhos mágicos&lt;/a&gt; controlados por palavras também fica a duas horas de trem de &lt;a href=&quot;http://pt.wikipedia.org/wiki/Praga&quot; title=&quot;Praga, na wikipedia&quot; rel=&quot;nofollow&quot;&gt;Praga&lt;/a&gt;. Terra do &lt;a href=&quot;http://pt.wikipedia.org/wiki/Praga&quot; title=&quot;Golem, na wikipedia&quot; rel=&quot;nofollow&quot;&gt;Golem&lt;/a&gt;.
+&lt;/p&gt;
+&lt;blockquote&gt;
+	&lt;p&gt;
+	&lt;span&gt;&lt;a href=&quot;http://www.bungletofantomas.com/&quot; title=&quot;Fantomas&quot; rel=&quot;nofollow&quot;&gt;
+	Life born anew &lt;br /&gt;
+	Let silence scorn you &lt;br /&gt;
+	Reach out my body &lt;br /&gt;
+	&lt;/a&gt;
+	&lt;br /&gt;
+	I walk &lt;a href=&quot;http://muuzik.net/letras/fantomas/der-golem/&quot; title=&quot;Der Golem, Fantomas&quot; rel=&quot;nofollow&quot;&gt;again&lt;/a&gt;&lt;/span&gt;&lt;a href=&quot;http://muuzik.net/letras/fantomas/der-golem/&quot; title=&quot;Der Golem, Fantomas&quot; rel=&quot;nofollow&quot;&gt; &lt;br /&gt;
+	&lt;/a&gt;
+	&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+ <category domain="http://efeefe.no-ip.org/tag/alemanha">alemanha</category>
+ <category domain="http://efeefe.no-ip.org/tag/dresden">dresden</category>
+ <category domain="http://efeefe.no-ip.org/tag/linha-de-comando">linha de comando</category>
+ <category domain="http://efeefe.no-ip.org/tag/praga">praga</category>
+ <category domain="http://efeefe.no-ip.org/tag/tecnomagia">tecnomagia</category>
+ <pubDate>Fri, 01 Jun 2007 03:24:39 +0000</pubDate>
+ <dc:creator>felipefonseca</dc:creator>
+ <guid isPermaLink="false">280 at http://efeefe.no-ip.org</guid>
+</item>
+</channel>
+</rss>

@@ -1,0 +1,334 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br" dir="ltr">
+
+
+<!-- Mirrored from efeefe.no-ip.org/tag/linha-de-comando by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 17 Jul 2016 02:41:51 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>linha de comando | efeefe</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="alternate" type="application/rss+xml" title="RSS - linha de comando" href="feed/" />
+<link rel="shortcut icon" href="../../sites/efeefe.no-ip.org/themes/addari/favicon/index.ico" type="image/x-icon" />
+  <link rel="stylesheet" type="text/css" href="../../sites/efeefe.no-ip.org/themes/addari/master/index.css"/>
+ <link rel="me" type="text/html" href="http://www.google.com/profiles/felipefonseca"/> 
+  <link type="text/css" rel="stylesheet" media="all" href="../../sites/efeefe.no-ip.org/files/css/css_d9d4a14b598f49b7e52e4ae06c53c66e/index.css" />
+    <script type="text/javascript"> </script>
+</head>
+<body class="not-front not-logged-in page-taxonomy two-sidebars" id="mainbody" >
+
+<div id="container">
+
+<div id="head">
+<a href="https://plus.google.com/102179359157525900274" rel="publisher">Google+</a>
+<div id="hleft">
+
+<div id="titles">
+   <h1 class='site-name'><a href="../../" title="Principal">efeefe</a></h1>      </div>
+
+</div>
+
+<div id="hright">
+
+    <div id="secondary-links">
+                          
+</div>
+
+<div id="header_block">
+</div>
+
+</div>
+
+</div><!--head-->
+
+<div id="mast">
+
+<div id="menu">
+	        <ul class="links" id="navlist"><li class="menu-104 first"><a href="../../blog/" title="só blogue, só blogue">Blog</a></li>
+<li class="menu-88"><a href="../../textos/" title="Alguns textos selecionados">Textos</a></li>
+<li class="menu-103"><a href="../../projetos/">Projetos</a></li>
+<li class="menu-87"><a href="../../cv/" title="meu cv">Curriculum Vitae</a></li>
+<li class="menu-4145 last"><a href="../../contato/" title="Contato">Contato</a></li>
+</ul></div>
+
+<div id="wrap" >
+
+<div id="postarea">
+<div id="postareainner">
+ <div class="breadcrumb"><a href="../../">Principal</a></div>                    <div id="h2title"><h2>linha de comando</h2></div>		  
+                                         <div class=" typeteaser">
+ 
+  <div class="node">
+        <h2 class="title"><a href="../../agregando/uid/">UID</a></h2>    <div class="submitted">  Qui, 17/03/2011 - 17:49 by <a href="../../pessoa/felipefonseca/" title="Ver o perfil do usuário.">felipefonseca</a> &nbsp;  <strong style="color: #30424e">Tags:</strong><ul class="links inline"><li class="taxonomy_term_784 first"><a href="../cli/" rel="tag" title="">cli</a></li>
+<li class="taxonomy_term_37"><a href="../drupal/" rel="tag" title="">drupal</a></li>
+<li class="taxonomy_term_390"><a href="../infral%c3%b3gica/" rel="tag" title="">infralógica</a></li>
+<li class="taxonomy_term_64 active"><a href="." rel="tag" title="" class="active">linha de comando</a></li>
+<li class="taxonomy_term_15"><a href="../metareciclagem/" rel="tag" title="">metareciclagem</a></li>
+<li class="taxonomy_term_785 last"><a href="../mysql/" rel="tag" title="">mysql</a></li>
+</ul> </div>
+    <div class="taxonomy"></div>
+    <div class="content"><div class=fonte_feed>
+<em>O post abaixo foi agregado por RSS. <a href=http://rede.metareciclagem.org/blog/17-03-11/UID>Link original</a></em></div>
+---
+<p>Há alguns meses já estávamos com problemas em alguns posts do <a href="http://rede.metareciclagem.org/" rel="nofollow" rel="nofollow">site da <a href="../../freelinking/MetaReciclagem/" class="freelinking" rel="nofollow">MetaReciclagem</a></a>: apareciam de repente sem estar associados a nenhumx autorx, e isso atrapalhava o acesso e a edição do conteúdo. Não consegui descobrir a causa do problema (que afeta, em verdade, uma proporção ínfima do site - duas páginas em um universo de mais de 2000), mas hoje aprendi a consertar, com ajuda do <a href="../../pessoa/wundo/" rel="nofollow" rel="nofollow">Wundo</a>. Lá vai:</p>
+<p>Entrar no mysql</p>
+<p class="rteindent1">#mysql -u usuario -p</p>
+<p>Selecionar o banco de dados</p>
+<p class="rteindent1">mysql> use bancodedados;</p>
+<p>Verificar se o problema é mesmo o id de usuárix</p>
+<p class="rteindent1">mysql> SELECT uid from node where nid=XXX;</p>
+<p>(onde XXX deve ser substituído pelo ID do node em questão)</p>
+<p>O resultado aqui foi:</p>
+<p>
+</p><p class="rteindent1">+-----+</p>
+<p class="rteindent1">| uid |</p>
+<p class="rteindent1">+-----+</p>
+<p class="rteindent1">|   0 | </p>
+<p class="rteindent1">+-----+</p>
+Ou seja, o node está associado ao usuário 0, que não existe. Então vou associá-lo ao usuário 1 (que é o superusuário do drupal) e posteriormente posso atribuir a quem eu quiser através da interface web:
+ 
+mysql> UPDATE node SET uid = 1 WHERE nid = XXX;
+ 
+E pronto, os nodes voltaram a ser associados a usuários do site: <a href="../../freelinking/EventosEtc/" class="freelinking" rel="nofollow">EventosEtc</a> e <a href="../../wiki/APH-no-Recife/" rel="nofollow" rel="nofollow">APH-no-Recife</a>.
+<a href="../../conectaz/Infra-L%c3%b3gica/" rel="nofollow">Infra Lógica</a></div>
+    <div class="links-readmore">&raquo;<ul class="links inline"><li class="feedapi_feed first"><a href="../../fonte/blog-na-rede-metareciclagem/">Feed: Blog na Rede MetaReciclagem</a></li>
+<li class="feedapi_original last"><a href="http://rede.metareciclagem.org/blog/17-03-11/UID">Original article</a></li>
+</ul></div>  </div>
+</div> <div class=" typeteaser">
+ 
+  <div class="node">
+        <h2 class="title"><a href="../../agregando/god/">God</a></h2>    <div class="submitted">  Qua, 22/04/2009 - 23:24 by <a href="../../pessoa/felipefonseca/" title="Ver o perfil do usuário.">felipefonseca</a> &nbsp;  <strong style="color: #30424e">Tags:</strong><ul class="links inline"><li class="taxonomy_term_18 first"><a href="../english/" rel="tag" title="">english</a></li>
+<li class="taxonomy_term_449"><a href="../god/" rel="tag" title="">god</a></li>
+<li class="taxonomy_term_64 active"><a href="." rel="tag" title="" class="active">linha de comando</a></li>
+<li class="taxonomy_term_448"><a href="../shell/" rel="tag" title="">shell</a></li>
+<li class="taxonomy_term_10"><a href="../tecnomagia/" rel="tag" title="">tecnomagia</a></li>
+<li class="taxonomy_term_381 last"><a href="../uncategorized/" rel="tag" title="">Uncategorized</a></li>
+</ul> </div>
+    <div class="taxonomy"></div>
+    <div class="content"><div class=fonte_feed>
+<em>O post abaixo foi agregado por RSS. <a href=http://tecnomagxs.wordpress.com/2009/04/23/god/>Link original</a></em></div>
+---
+A criação do mundo em linha de comando:
+<a href="http://celobox.googlepages.com/god.html" title="http://celobox.googlepages.com/god.html" rel="nofollow">http://celobox.googlepages.com/god.html</a>
+       <img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=tecnomagxs.wordpress.com&amp;blog=4364306&amp;post=128&amp;subd=tecnomagxs&amp;ref=&amp;feed=1" /></div>
+    <div class="links-readmore">&raquo;<ul class="links inline"><li class="feedapi_feed first"><a href="../../node/2913/">Feed: Blog TecnoMagia</a></li>
+<li class="feedapi_original last"><a href="http://tecnomagxs.wordpress.com/2009/04/23/god/">Original article</a></li>
+</ul></div>  </div>
+</div> <div class=" typeteaser">
+ 
+  <div class="node">
+        <h2 class="title"><a href="../../blog/instalando-o-drupal-em-pouco-mais-de-6-minutos/">Instalando o drupal em pouco mais de 6 minutos</a></h2>    <div class="submitted">  Qua, 22/04/2009 - 19:33 by <a href="../../pessoa/felipefonseca/" title="Ver o perfil do usuário.">felipefonseca</a> &nbsp;  <strong style="color: #30424e">Tags:</strong><ul class="links inline"><li class="taxonomy_term_37 first"><a href="../drupal/" rel="tag" title="">drupal</a></li>
+<li class="taxonomy_term_64 active"><a href="." rel="tag" title="" class="active">linha de comando</a></li>
+<li class="taxonomy_term_92"><a href="../linux/" rel="tag" title="">linux</a></li>
+<li class="taxonomy_term_15"><a href="../metareciclagem/" rel="tag" title="">metareciclagem</a></li>
+<li class="taxonomy_term_448"><a href="../shell/" rel="tag" title="">shell</a></li>
+<li class="taxonomy_term_248 last"><a href="../xemele/" rel="tag" title="">xemele</a></li>
+</ul> </div>
+    <div class="taxonomy"></div>
+    <div class="content"><p>Tava brincando hoje com ferramentas de captura do desktop, e pra testar acabei fazendo um v&iacute;deo de como subir um site com drupal em poucos minutos, usando shell e deixando tudo bem organizadinho pra eventuais updates. T&aacute; no youtube, ainda sem &aacute;udio, mas funcionando. Se eu quisesse, acho que conseguia fechar em cinco minutos, mas fiquei meio lerdo em uns momentos.</p>
+<object height="344" width="425">
+<param name="movie" value="http://www.youtube.com/v/oRSjkbQ4QHQ&amp;hl=pt-br&amp;fs=1" />
+<param name="allowFullScreen" value="true" />
+<param name="allowscriptaccess" value="always" /><embed height="344" width="425" src="http://www.youtube.com/v/oRSjkbQ4QHQ&amp;hl=pt-br&amp;fs=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true"></embed></object></div>
+    <div class="links-readmore">&raquo;<ul class="links inline"><li class="blog_usernames_blog first last"><a href="../../blog/felipefonseca/" title="Read felipefonseca&#039;s latest blog entries.">felipefonseca&#039;s blog</a></li>
+</ul></div>  </div>
+</div> <div class=" typeteaser">
+ 
+  <div class="node">
+        <h2 class="title"><a href="../../blog/drushin/">Drushin</a></h2>    <div class="submitted">  Sáb, 16/08/2008 - 12:08 by <a href="../../pessoa/felipefonseca/" title="Ver o perfil do usuário.">felipefonseca</a> &nbsp;  <strong style="color: #30424e">Tags:</strong><ul class="links inline"><li class="taxonomy_term_37 first"><a href="../drupal/" rel="tag" title="">drupal</a></li>
+<li class="taxonomy_term_64 active"><a href="." rel="tag" title="" class="active">linha de comando</a></li>
+<li class="taxonomy_term_248 last"><a href="../xemele/" rel="tag" title="">xemele</a></li>
+</ul> </div>
+    <div class="taxonomy"></div>
+    <div class="content">Usando o mutirao e a rede.metareciclagem.org para começar a testar o <a href="http://drupal.org/project/drush" rel="nofollow">drush</a>, que pode nos ajudar bastante na administração de sites em drupal.<br /><br />A instalação rolou normal: descompactar os arquivos dentro de modules e habilitar na web. Escolhi wget em vez de CVS ou SVN. Aí fui pra linha de comando. Além das <a href="http://cvs.drupal.org/viewvc.py/drupal/contributions/modules/drush/README.txt?view=markup" rel="nofollow">dicas</a> de instalação, resolvi fazer mais de um link simbólico, já que vou usar o drush no mutirao e na rede metareciclagem. Assim, em vez de ln -s (...) /usr/bin/drush, fiz ln -s (...) /usr/bin/drush_mutirao e ln -s (...) /usr/bin/drush_rede. <br /><br />Fui pro diretório de instalação do mutirao e rodei drush_mutirao. Ele reclamou que o php estava tentando alocar 30Mb de RAM. Achei estranho, porque já tinha mudado o php.ini pra alocar 64Mb. Demorei um pouco a me ligar que eu não tava rodando o php dentro do browser, mas na linha de comando. Precisava então mudara o php.ini dentro de /etc/php5/cli e não /etc/php5/apache2. Editei o arquivo e rodei:<br /><br /><em>drush</em><br /><br />me deu uma lista de opções<br /><br /><em>drush pm refresh</em><br /><br />e depois <br /><br /><em>drush pm update -v</em><br /><br />ele avisou que não pode (ainda) atualizar o core do drupal, mas baixou e substituiu três módulos que estavam desatualizados. depois foi só rodar o update.php e pronto, tudo funcionando.<br /><br />ponto pro drush.</div>
+    <div class="links-readmore">&raquo;<ul class="links inline"><li class="blog_usernames_blog first last"><a href="../../blog/felipefonseca/" title="Read felipefonseca&#039;s latest blog entries.">felipefonseca&#039;s blog</a></li>
+</ul></div>  </div>
+</div> <div class=" typeteaser">
+ 
+  <div class="node">
+        <h2 class="title"><a href="../../blog/linha-de-comando-donna-em-sampa-e-troca%c3%a7%c3%a3o-de-id%c3%a9ia/">Linha de comando, donna em sampa e trocação de idéia</a></h2>    <div class="submitted">  Seg, 04/06/2007 - 19:57 by <a href="../../pessoa/felipefonseca/" title="Ver o perfil do usuário.">felipefonseca</a> &nbsp;  <strong style="color: #30424e">Tags:</strong><ul class="links inline"><li class="taxonomy_term_17 first"><a href="../bricolabs/" rel="tag" title="">bricolabs</a></li>
+<li class="taxonomy_term_55"><a href="../descentro/" rel="tag" title="">descentro</a></li>
+<li class="taxonomy_term_64 active"><a href="." rel="tag" title="" class="active">linha de comando</a></li>
+<li class="taxonomy_term_15"><a href="../metareciclagem/" rel="tag" title="">metareciclagem</a></li>
+<li class="taxonomy_term_10 last"><a href="../tecnomagia/" rel="tag" title="">tecnomagia</a></li>
+</ul> </div>
+    <div class="taxonomy"></div>
+    <div class="content"><p>
+Eu tenho uma coleção de bookmarks aguardando leitura aqui no meu
+firefox. Hoje resolvi passar alguns (de vez em quando eu começo a ler
+alguns deles) e achei um artigo bem interessante:
+</p>
+<p>
+<a href="http://www.networkcultures.org/weblog/archives/2007/04/linux_for_theat.html" title="Network Cultures" rel="nofollow"><strong>Linux for Theatre Makers: Embodiment and *nix modus operandi</strong></a>
+</p>
+<p>
+Alguns trechos que chamaram minha atenção:
+</p>
+<blockquote>
+	<p>
+	My central thread in this text is the Linux computer operating
+	system(OS) and more specifically the use of the command-line
+	interface within this OS and its relationship to embodiment.
+	</p>
+	<p>
+	(...)
+	</p>
+	<p>
+	When I first discovered the power to delete the file in my OpenBSD
+	terminal that the OSX finder could not trash I felt was no longer a
+	prisoner inside my machine, only possessing knowledge of a GUI, I was
+	formerly stuck in a holding pattern. Using *nix you keep moving all the
+	time, discovering always new executable codes sensitive to commands.
+	</p>
+	<p>
+	In the shell I find a marvelous mess of constellations, nebulae,
+	interstellar gaps, awesome gullies, that provokes in me an
+	indescribable sense of vertigo, as if I am hanging from earth upside
+	down on the brink of infinite space, with terrestrial gravity still
+	holding me by the heels but about to release me any moment. An example
+	is /dev/null - a special *nix file where you pipe your unwanted data
+	flow through this output. When I first experienced viewing data
+	disappearing into this file, I immediately had an epiphany about the
+	black hole and how the theory of the event horizon might function in an
+	every day context.
+	</p>
+	<p>
+	(...)
+	<span class="read-more"><a href="../../blog/linha-de-comando-donna-em-sampa-e-troca%c3%a7%c3%a3o-de-id%c3%a9ia/"><strong>leia mais &gt;&gt;</strong></a></span></p></blockquote></div>
+    <div class="links-readmore">&raquo;<ul class="links inline"><li class="blog_usernames_blog first last"><a href="../../blog/felipefonseca/" title="Read felipefonseca&#039;s latest blog entries.">felipefonseca&#039;s blog</a></li>
+</ul></div>  </div>
+</div> <div class=" typeteaser">
+ 
+  <div class="node">
+        <h2 class="title"><a href="../../blog/o-poder-das-palavras/">O poder das palavras</a></h2>    <div class="submitted">  Sex, 01/06/2007 - 00:24 by <a href="../../pessoa/felipefonseca/" title="Ver o perfil do usuário.">felipefonseca</a> &nbsp;  <strong style="color: #30424e">Tags:</strong><ul class="links inline"><li class="taxonomy_term_49 first"><a href="../alemanha/" rel="tag" title="">alemanha</a></li>
+<li class="taxonomy_term_60"><a href="../dresden/" rel="tag" title="">dresden</a></li>
+<li class="taxonomy_term_64 active"><a href="." rel="tag" title="" class="active">linha de comando</a></li>
+<li class="taxonomy_term_63"><a href="../praga/" rel="tag" title="">praga</a></li>
+<li class="taxonomy_term_10 last"><a href="../tecnomagia/" rel="tag" title="">tecnomagia</a></li>
+</ul> </div>
+    <div class="taxonomy"></div>
+    <div class="content"><p>
+Pra além de toda exploração simbólica-poética, palavras <a href="http://pt.wikipedia.org/wiki/Cabala" title="Cabala, na wikipedia" rel="nofollow">têm poder</a>.
+</p>
+<blockquote>
+	<p>
+	Grande parte das formas de Cabala ensinam que cada letra, palavra,
+	número, e acento da Escritura contêm um sentido escondido e ensina os
+	métodos de interpretação para verificar esses significados ocultos.
+	</p>
+</blockquote>
+<p>
+Palavras têm poder
+</p>
+<p>
+<a href="http://www.midiatatica.org/ip/index.php?id=2,58,0,0,1,0" title="Oficina de Tela preta no IP" rel="nofollow">
+root@nomade:~# rm -rf /</a>
+</p>
+<p>
+<img src="http://www.midiatatica.org/ip/content/images/8fdf0c4110efc624705c4df058e86b56.png" alt="Tela Preta" width="400" height="226" />
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+Pra além do mkdir, se pans fazer um mkmundo. mkgente.
+</p>
+<p>
+<a href="http://pt.wikipedia.org/wiki/Golem" title="Golem, na Wikipedia" rel="nofollow">root@nomade:~# mkgolem</a>
+<span class="read-more"><a href="../../blog/o-poder-das-palavras/"><strong>leia mais &gt;&gt;</strong></a></span></p></div>
+    <div class="links-readmore">&raquo;<ul class="links inline"><li class="blog_usernames_blog first last"><a href="../../blog/felipefonseca/" title="Read felipefonseca&#039;s latest blog entries.">felipefonseca&#039;s blog</a></li>
+</ul></div>  </div>
+</div></div>
+  <div class="block block-tagadelic" id="block-tagadelic-1">
+    <h2 class="title"><none></h2>
+    <div class="content"><a href="../agregador/" class="tagadelic level5" rel="tag" title="">agregador</a> 
+<a href="../blogs/" class="tagadelic level4" rel="tag" title="">blogs</a> 
+<a href="../desvio/" class="tagadelic level3" rel="tag" title="">desvio</a> 
+<a href="../eventos/" class="tagadelic level2" rel="tag" title="">eventos</a> 
+<a href="../feeds/" class="tagadelic level4" rel="tag" title="">feeds</a> 
+<a href="../lifelog/" class="tagadelic level3" rel="tag" title="">lifelog</a> 
+<a href="../lixo-eletr%c3%b4nico/" class="tagadelic level1" rel="tag" title="">lixo eletrônico</a> 
+<a href="../metapub/" class="tagadelic level1" rel="tag" title="">metapub</a> 
+<a href="../metareciclagem/" class="tagadelic level6" rel="tag" title="">metareciclagem</a> 
+<a href="../projetos/" class="tagadelic level5" rel="tag" title="">projetos</a> 
+<a href="../redelabs/" class="tagadelic level3" rel="tag" title="">redelabs</a> 
+<a href="../tecnomagia/" class="tagadelic level4" rel="tag" title="">tecnomagia</a> 
+<a href="../ubalab/" class="tagadelic level4" rel="tag" title="">ubalab</a> 
+<a href="../ubatuba/" class="tagadelic level4" rel="tag" title="">ubatuba</a> 
+<a href="../uncategorized/" class="tagadelic level1" rel="tag" title="">Uncategorized</a> 
+<div class='more-link'><a href="../../tagadelic/chunk/1/">more tags</a></div></div>
+ </div>
+</div>
+
+<div id="sidearea">
+
+
+<div id="sidebars">
+
+<div id="left">
+  <div class="block block-block" id="block-block-1">
+    <h2 class="title">Ego ergo ergo</h2>
+    <div class="content"><p><img alt="Eu" src="../../sites/efeefe.no-ip.org/files/images/Felipe%20Fonseca_06-2-100/index.jpg" />&nbsp;</p>
+<ul>
+    <li><a href="../../projetos/">Projetos</a></li>
+    <li><a href="../../textos/">Textos</a></li>
+    <li>Meu <a href="http://desvio.cc/blogs/efeefe">blogue no Desvio</a></li>
+    <li>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" /><a href="http://rede.metareciclagem.org/pessoa/felipefonseca">Perfil na MetaReciclagem</a>                    
+    </li>
+    <li>Meu <a href="http://mutgamb.org/blog/3">blogue no Mutgamb</a></li>
+    <li>Blogue <a href="http://ubalab.org/">Ubalab</a></li>
+    <li>Blogue <a href="http://blog.redelabs.org/">Rede//Labs</a></li>
+    <li>Blogue <a href="http://lixoeletronico.org/">Lixo Eletr&ocirc;nico</a></li>
+    <li>Blogue <a href="http://tecnomagxs.wordpress.com/">Tecnomagia</a></li>
+    <li>Blogue <a href="http://itinerancias.wordpress.com/">Itiner&acirc;ncias</a></li>
+    <li><a href="http://meadiciona.com/efeefe/">Meadiciona</a></li>
+    <li><a href="http://friendfeed.com/efeefe">Friendfeed</a></li>
+    <li>Perfil na <a href="http://www.lastfm.pt/user/felipefonseca/">Last.FM</a></li>
+    <li><a href="http://youtube.com/felipefonseca">V&iacute;deos no Youtube</a></li>
+    <li><a href="http://one.revver.com/account/show/felipefonseca">V&iacute;deos no Revver</a></li>
+    <li><a href="http://flickr.com/photos/felipefonseca">Fotos no Flickr</a></li>
+    <li><a href="http://estudiolivre.org/el-user.php?view_user=felipefonseca">Perfil no Estudio Livre</a></li>
+    <li><a href="http://www.linkedin.com/in/felipefonseca">Perfil no Linkedin</a></li>
+    <li><a href="http://facebook.com/efefonseca">Perfil no Facebook</a></li>
+    <li><a href="http://culturadigital.br/members/efeefe">Perfil na Cultura Digital</a></li>
+    <li><a href="http://softwarelivre.org/profile/efeefe">Perfil no Software Livre</a></li>
+<li><a href="http://www.slideshare.net/felipefonseca/">Perfil no slideshare</a></li>
+    <li><a href="../../cv/">Curriculum Vitae</a></li>
+</ul></div>
+ </div>
+  <div class="block block-block" id="block-block-8">
+    <h2 class="title">Livros</h2>
+    <div class="content"><p><a href="../../livro/repair-culture/" rel="nofollow"><img alt="Repair Culture" src="../../sites/efeefe.no-ip.org/files/images/capa-thumb/index.png" style="width: 180px; height: 263px;" /></a></p>
+<hr />
+<p><a href="../../livro/laboratorios-pos-digital/" rel="nofollow"><img alt="" height="227" src="../../sites/efeefe.no-ip.org/files/capa_web/index.jpg" width="160" /></a></p></div>
+ </div>
+</div>
+
+<div id="right">
+  <div class="block block-block" id="block-block-5">
+    <h2 class="title"></h2>
+    <div class="content"><p><a href="http://ibsn.org/" rel="nofollow"><img width="150" height="79" alt=" Internet Blog Serial Number 0-373-373-026" src="http://ibsn.org/barcode/0-373-373-026.gif" /></a></p></div>
+ </div>
+</div>
+<br style="clear:both;" />
+</div><!--sidebars-->
+
+</div>
+
+<br style="clear:both;" />
+</div>
+
+</div>
+
+<div id="footer"> <div id="foot-block">  <div class="block block-node" id="block-node-0">
+    <h2 class="title">Sindicalizar</h2>
+    <div class="content"><a href="../../rss/index.xml" class="feed-icon"><img src="../../misc/feed/index.png" alt="Conteúdo sindicalizado" title="Sindicalizar" width="16" height="16" /></a></div>
+ </div>
+ </div> O conteúdo desse site é copyleft - use, mas diga de onde veio. |  Powered by <a href="http://www.drupal.com/">Drupal</a>, Designed by <a href="http://www.worthapost.com/">Worthapost</a> </div>
+
+</div> <!--container-->
+  </body>
+
+<!-- Mirrored from efeefe.no-ip.org/tag/linha-de-comando by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 17 Jul 2016 02:41:53 GMT -->
+</html>

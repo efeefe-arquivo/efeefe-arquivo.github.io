@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br" dir="ltr">
+
+
+<!-- Mirrored from efeefe.no-ip.org/blog/vserver-redux by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 17 Jul 2016 03:59:12 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Vserver redux | efeefe</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../../sites/efeefe.no-ip.org/themes/addari/favicon/index.ico" type="image/x-icon" />
+  <link rel="stylesheet" type="text/css" href="../../sites/efeefe.no-ip.org/themes/addari/master/index.css"/>
+ <link rel="me" type="text/html" href="http://www.google.com/profiles/felipefonseca"/> 
+  <link type="text/css" rel="stylesheet" media="all" href="../../sites/efeefe.no-ip.org/files/css/css_ddedec92130ee6cc8a0608001ac1e5cc/index.css" />
+    <script type="text/javascript"> </script>
+</head>
+<body class="not-front not-logged-in page-node node-type-blog two-sidebars" id="mainbody" >
+
+<div id="container">
+
+<div id="head">
+<a href="https://plus.google.com/102179359157525900274" rel="publisher">Google+</a>
+<div id="hleft">
+
+<div id="titles">
+   <h1 class='site-name'><a href="../../" title="Principal">efeefe</a></h1>      </div>
+
+</div>
+
+<div id="hright">
+
+    <div id="secondary-links">
+                          
+</div>
+
+<div id="header_block">
+</div>
+
+</div>
+
+</div><!--head-->
+
+<div id="mast">
+
+<div id="menu">
+	        <ul class="links" id="navlist"><li class="menu-104 first"><a href="../" title="só blogue, só blogue">Blog</a></li>
+<li class="menu-88"><a href="../../textos/" title="Alguns textos selecionados">Textos</a></li>
+<li class="menu-103"><a href="../../projetos/">Projetos</a></li>
+<li class="menu-87"><a href="../../cv/" title="meu cv">Curriculum Vitae</a></li>
+<li class="menu-4145 last"><a href="../../contato/" title="Contato">Contato</a></li>
+</ul></div>
+
+<div id="wrap" >
+
+<div id="postarea">
+<div id="postareainner">
+ <div class="breadcrumb"><a href="../../">Principal</a> » <a href="../">Blogs</a> » <a href="../felipefonseca/">felipefonseca&#039;s blog</a></div>                    <div id="h2title"><h2>Vserver redux</h2></div>		  
+                                         <div class="typepage ">
+ 
+  <div class="node">
+            <div class="submitted">  Qua, 30/07/2008 - 14:31 by <a href="../../pessoa/felipefonseca/" title="Ver o perfil do usuário.">felipefonseca</a> &nbsp;  <strong style="color: #30424e">Tags:</strong><ul class="links inline"><li class="taxonomy_term_15 first"><a href="../../tag/metareciclagem/" rel="tag" title="">metareciclagem</a></li>
+<li class="taxonomy_term_341 last"><a href="../../taxonomy/term/341/" rel="tag" title="">metaserver</a></li>
+</ul> </div>
+    <div class="taxonomy"></div>
+    <div class="content"><p>At&eacute; a semana passada, eu era um sujeito bastante mimado no que tange a administra&ccedil;&atilde;o de servidores. Comecei l&aacute; em 2001 ou 2002 com cpanel no <a href="http://vilago.com.br/" rel="nofollow">vilago</a>, depois usei por um tempo o servidor do <a href="http://interney.net/" rel="nofollow">interney</a>. A&iacute; eu passei por um monte de servicinhos baratos, e depois tive um servidor em casa por dois anos, rolando <a href="http://debian.org/" rel="nofollow">debian</a> woody, e tudo rolava razoavelmente bem - menos quando o cooler se enchia de p&oacute; ou as placas de rede n&atilde;o ag&uuml;entavam a alta disponibilidade. Naquela &eacute;poca, um bando de gente me ajudava na administra&ccedil;&atilde;o do bicho. Depois disso, tivemos a experi&ecirc;ncia com a aletta, e nessa eu fui muito mimado. Desde a primeira fase da aletta, tinha gente bastante competente e dedicada fazendo o trabalho pesado, configurando tudo, atualizando os sistemas, dando aquela olhada geral. Mas ela tem algum problema que ainda n&atilde;o conseguimos identificar, e ocasionalmente trava. Como n&atilde;o &eacute; um servi&ccedil;o comercial com suporte 27x7, e como a Holanda &eacute; meio longe, toda vez que ela trava - o que Murphy faz acontecer sempre no meio de fins de semana - temos que esperar algum holand&ecirc;s amigo voltar ao trampo na segunda-feira para apertar o reset. Por dois fins de semana seguidos, h&aacute; cerca de dois meses, eu fiquei sem acesso a ela, e por conta disso resolvi contratar um vserver no <a href="http://slicehost.com/" rel="nofollow">slicehost</a>, seguindo a indica&ccedil;&atilde;o do pessoal da <a href="http://chuva-inc.com/" rel="nofollow">chuva</a>. E a&iacute; come&ccedil;ou o barato.</p> <p>Mesmo na &eacute;poca que eu tinha o servidor em casa, nunca tive tanto problema com um servidor. Nos &uacute;ltimos tempos, pra piorar, o <a href="http://drupal.org/" rel="nofollow">drupal</a>, que &eacute; o sistema que eu mais uso, tem requisitado mais e mais recursos de m&aacute;quina. Desde o momento em que comecei a configurar esse vserver, tenho me sentido como se estivesse consertando um carro velho (e eu tenho bastante experi&ecirc;ncia nisso): &eacute; s&oacute; conseguir arrumar uma coisa, que j&aacute; aparece outra. Resumindo a hist&oacute;ria:</p> <ul>     <li>O primeiro problema que eu tive foi a aus&ecirc;ncia de alguns m&oacute;dulos adicionais no PHP, o que fazia um dos tr&ecirc;s sites que migrei pra l&aacute; enviarem tanta requisi&ccedil;&atilde;o que uma hora o bicho ca&iacute;a. Instalei os m&oacute;dulos.</li>     <li>Depois disso, passei uns dias e precisei de muita ajuda dxs amigxs e de documenta&ccedil;&atilde;o na web pra sacar como configurar diferentes vhosts no apache. Me faltava a diretiva NameVirtualHost, que no fim consegui priorizar renomeando o arquivo de configura&ccedil;&atilde;o do site principal com 00 na frente (o que faz o apache ler essa configura&ccedil;&atilde;o antes das outras) e inserindo a diretiva nele, antes de tudo.</li>     <li>Em seguida, o site mais pesado dos tr&ecirc;s - <a href="http://rede.metareciclagem.org/" rel="nofollow">da metareciclagem</a> - come&ccedil;ou a acusar que precisava de mais mem&oacute;ria no php.ini. Fui l&aacute; e torei a configura&ccedil;&atilde;o pra cima.</li>     <li>Depois disso, o bicho come&ccedil;ou a estourar a mem&oacute;ria RAM <em>e</em> o swap. Demorei um pouco at&eacute; sacar que precisava dar uma boa enxugada nas configura&ccedil;&otilde;es do apache, que no padr&atilde;o do debian &eacute; um mamute. Passei um par de dias polindo isso, lendo tutoriais, reduzindo o uso de mem&oacute;ria.</li>     <li>No meio do caminho, me liguei que n&atilde;o tava recebendo os emails do drupal. Na pregui&ccedil;a, mandei ver um <em>sudo apt-get install sendmail</em>, e n&atilde;o fiz mais nada. Foi um dia at&eacute; receber um email de um abuse qualquer dizendo que tinha inserido meu IP em uma blacklist. Fui l&aacute;, desinstalei o sendmail, requisitei a retirada da blacklist, e o <a href="http://chuva-inc.com/" rel="nofollow">Z&eacute;</a> me passou a dica do m&oacute;dulo SMTP, do drupal, que devo testar em breve.</li>     <li>Quando achei que tudo tava resolvido, o mysql n&atilde;o subia mais. Demorei um pouco a perceber que meus 10Gb de disco tinham se esgotado, e um <em>du -h --max-depth=1 /</em> me mostrou que a maior parte do disco (7Gb) estava indo em logs bin&aacute;rios do mysql. Fui ler um pouco, e pelo que entendi, se n&atilde;o vou replicar o db n&atilde;o preciso desses logs. Fui l&aacute; no /etc/mysql/my.cnf e desabilitei os logs.</li> </ul> <p>Pra quem se interessar pelo assunto, t&ocirc; juntando algumas refer&ecirc;ncias que coletei sobre tudo isso &agrave; minha cole&ccedil;&atilde;o de <a href="http://metareciclagem.ourproject.org/link/bookmarks.php/felipefonseca/metaserver" rel="nofollow">links sobre servidores</a> no scuttle metarec.</p><p><strong>Atualizando: </strong>&eacute; claro que o disco lotado teria conseq&uuml;&ecirc;ncias em coisas que escrevem muito... fui verificar as tabelas de banco de dados do site da metareciclagem, indo at&eacute; o diret&oacute;rio do banco espec&iacute;fico dentro de /var/lib/mysql e rodando um <em>myisamchk -e *.MYI</em>. Sete tabelas corrompidas, que consertei com um <em>myisamchk -o</em> para o arquivo .MYI de cada uma delas.</p></div>
+    <div class="links-readmore">&raquo;<ul class="links inline"><li class="blog_usernames_blog first last"><a href="../felipefonseca/" title="Read felipefonseca&#039;s latest blog entries.">felipefonseca&#039;s blog</a></li>
+</ul></div>  </div>
+</div></div>
+  <div class="block block-tagadelic" id="block-tagadelic-1">
+    <h2 class="title"><none></h2>
+    <div class="content"><a href="../../tag/agregador/" class="tagadelic level5" rel="tag" title="">agregador</a> 
+<a href="../../tag/blogs/" class="tagadelic level4" rel="tag" title="">blogs</a> 
+<a href="../../tag/desvio/" class="tagadelic level3" rel="tag" title="">desvio</a> 
+<a href="../../tag/eventos/" class="tagadelic level2" rel="tag" title="">eventos</a> 
+<a href="../../tag/feeds/" class="tagadelic level4" rel="tag" title="">feeds</a> 
+<a href="../../tag/lifelog/" class="tagadelic level3" rel="tag" title="">lifelog</a> 
+<a href="../../tag/lixo-eletr%c3%b4nico/" class="tagadelic level1" rel="tag" title="">lixo eletrônico</a> 
+<a href="../../tag/metapub/" class="tagadelic level1" rel="tag" title="">metapub</a> 
+<a href="../../tag/metareciclagem/" class="tagadelic level6" rel="tag" title="">metareciclagem</a> 
+<a href="../../tag/projetos/" class="tagadelic level5" rel="tag" title="">projetos</a> 
+<a href="../../tag/redelabs/" class="tagadelic level3" rel="tag" title="">redelabs</a> 
+<a href="../../tag/tecnomagia/" class="tagadelic level4" rel="tag" title="">tecnomagia</a> 
+<a href="../../tag/ubalab/" class="tagadelic level4" rel="tag" title="">ubalab</a> 
+<a href="../../tag/ubatuba/" class="tagadelic level4" rel="tag" title="">ubatuba</a> 
+<a href="../../tag/uncategorized/" class="tagadelic level1" rel="tag" title="">Uncategorized</a> 
+<div class='more-link'><a href="../../tagadelic/chunk/1/">more tags</a></div></div>
+ </div>
+</div>
+
+<div id="sidearea">
+
+
+<div id="sidebars">
+
+<div id="left">
+  <div class="block block-block" id="block-block-1">
+    <h2 class="title">Ego ergo ergo</h2>
+    <div class="content"><p><img alt="Eu" src="../../sites/efeefe.no-ip.org/files/images/Felipe%20Fonseca_06-2-100/index.jpg" />&nbsp;</p>
+<ul>
+    <li><a href="../../projetos/">Projetos</a></li>
+    <li><a href="../../textos/">Textos</a></li>
+    <li>Meu <a href="http://desvio.cc/blogs/efeefe">blogue no Desvio</a></li>
+    <li>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" /><a href="http://rede.metareciclagem.org/pessoa/felipefonseca">Perfil na MetaReciclagem</a>                    
+    </li>
+    <li>Meu <a href="http://mutgamb.org/blog/3">blogue no Mutgamb</a></li>
+    <li>Blogue <a href="http://ubalab.org/">Ubalab</a></li>
+    <li>Blogue <a href="http://blog.redelabs.org/">Rede//Labs</a></li>
+    <li>Blogue <a href="http://lixoeletronico.org/">Lixo Eletr&ocirc;nico</a></li>
+    <li>Blogue <a href="http://tecnomagxs.wordpress.com/">Tecnomagia</a></li>
+    <li>Blogue <a href="http://itinerancias.wordpress.com/">Itiner&acirc;ncias</a></li>
+    <li><a href="http://meadiciona.com/efeefe/">Meadiciona</a></li>
+    <li><a href="http://friendfeed.com/efeefe">Friendfeed</a></li>
+    <li>Perfil na <a href="http://www.lastfm.pt/user/felipefonseca/">Last.FM</a></li>
+    <li><a href="http://youtube.com/felipefonseca">V&iacute;deos no Youtube</a></li>
+    <li><a href="http://one.revver.com/account/show/felipefonseca">V&iacute;deos no Revver</a></li>
+    <li><a href="http://flickr.com/photos/felipefonseca">Fotos no Flickr</a></li>
+    <li><a href="http://estudiolivre.org/el-user.php?view_user=felipefonseca">Perfil no Estudio Livre</a></li>
+    <li><a href="http://www.linkedin.com/in/felipefonseca">Perfil no Linkedin</a></li>
+    <li><a href="http://facebook.com/efefonseca">Perfil no Facebook</a></li>
+    <li><a href="http://culturadigital.br/members/efeefe">Perfil na Cultura Digital</a></li>
+    <li><a href="http://softwarelivre.org/profile/efeefe">Perfil no Software Livre</a></li>
+<li><a href="http://www.slideshare.net/felipefonseca/">Perfil no slideshare</a></li>
+    <li><a href="../../cv/">Curriculum Vitae</a></li>
+</ul></div>
+ </div>
+  <div class="block block-block" id="block-block-8">
+    <h2 class="title">Livros</h2>
+    <div class="content"><p><a href="../../livro/repair-culture/" rel="nofollow"><img alt="Repair Culture" src="../../sites/efeefe.no-ip.org/files/images/capa-thumb/index.png" style="width: 180px; height: 263px;" /></a></p>
+<hr />
+<p><a href="../../livro/laboratorios-pos-digital/" rel="nofollow"><img alt="" height="227" src="../../sites/efeefe.no-ip.org/files/capa_web/index.jpg" width="160" /></a></p></div>
+ </div>
+</div>
+
+<div id="right">
+  <div class="block block-block" id="block-block-5">
+    <h2 class="title"></h2>
+    <div class="content"><p><a href="http://ibsn.org/" rel="nofollow"><img width="150" height="79" alt=" Internet Blog Serial Number 0-373-373-026" src="http://ibsn.org/barcode/0-373-373-026.gif" /></a></p></div>
+ </div>
+</div>
+<br style="clear:both;" />
+</div><!--sidebars-->
+
+</div>
+
+<br style="clear:both;" />
+</div>
+
+</div>
+
+<div id="footer"> <div id="foot-block">  <div class="block block-node" id="block-node-0">
+    <h2 class="title">Sindicalizar</h2>
+    <div class="content"><a href="../../rss/index.xml" class="feed-icon"><img src="../../misc/feed/index.png" alt="Conteúdo sindicalizado" title="Sindicalizar" width="16" height="16" /></a></div>
+ </div>
+ </div> O conteúdo desse site é copyleft - use, mas diga de onde veio. |  Powered by <a href="http://www.drupal.com/">Drupal</a>, Designed by <a href="http://www.worthapost.com/">Worthapost</a> </div>
+
+</div> <!--container-->
+  </body>
+
+<!-- Mirrored from efeefe.no-ip.org/blog/vserver-redux by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 17 Jul 2016 03:59:12 GMT -->
+</html>
